@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('http://getwallpapers.com/wallpaper/full/2/c/a/615014.jpg');
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000000;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #ff4040, 0 0 20px #ff4040, 0 0 30px #ff4040;
+            }
+
+            50% {
+                text-shadow: 0 0 20px #ff4040, 0 0 30px #ff4040, 0 0 40px #ff4040;
+            }
+
+            100% {
+                text-shadow: 0 0 10px #ff4040, 0 0 20px #ff4040, 0 0 30px #ff4040;
+            }
+        }
+
+        table {
+            border: 1px solid red;
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        th, td {
+            border: 2px solid rgb(255, 0, 0);
+            padding: 10px;
+            color: #ffffff;
+            text-align: left;
+            
+        }
+
+        th {
+            color: red;
+            
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 1.5%;
+        }
+
+        .action-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 20px;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #000; 
+            color: #ffffff; 
+            background-color: #000000; 
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            margin: 5px;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        .action-button:hover {
+            background-color: #000; 
+            color: #ff0000; 
+            box-shadow: 0 0 15px #ff4040; 
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>UPDATE DATA</h1>
+    <table>
+        <tr>
+            <th>Sr.No.</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>UPDATE</th>
+        </tr>
+        {% for i in all %}
+        <tr>
+            <td> {{ forloop.counter }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.address }}</td>
+            <td>{{ i.contact }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.msg }}</td>
+            <td> <a href="/edit/{{i.id}}">Update</a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="button-container">
+    <a href="/show"><button class="action-button">Show</button></a>
+    </div>
+</body>
+</html>

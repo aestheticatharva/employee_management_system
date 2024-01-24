@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('http://getwallpapers.com/wallpaper/full/2/c/a/615014.jpg');
+            color: red;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000000;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #ff4040, 0 0 20px #ff4040, 0 0 30px #ff4040;
+            }
+
+            50% {
+                text-shadow: 0 0 20px #ff4040, 0 0 30px #ff4040, 0 0 40px #ff4040;
+            }
+
+            100% {
+                text-shadow: 0 0 10px #ff4040, 0 0 20px #ff4040, 0 0 30px #ff4040;
+            }
+        }
+
+        form {
+            margin: 20px;
+        }
+
+        table {
+            border: 1px solid red;
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(0, 0, 0, 0.2);
+
+
+        }
+
+        table,
+        th,
+        td {
+            border: 3px solid red;
+
+
+
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            display: inline-block;
+            border: 3px solid red;
+            box-sizing: border-box;
+            background-color: rgba(255, 0, 0, 0.2);
+            color: white;
+
+        }
+
+        input[type="submit"] {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 20px;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #000; 
+            color: #ffffff; 
+            background-color: #000000; 
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            margin: 5px;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #000; 
+            color: #ff0000; 
+            box-shadow: 0 0 15px #ff4040; 
+        }
+
+        .input-container {
+    display: flex;
+    justify-content: center;
+}
+
+.action-button {
+    background-color: #FF0000;
+    color: #FFF;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.action-button:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+    </style>
+</head>
+
+<body>
+    <h1>EMPLOYEE FORM</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table border="3" align="center">
+            <tr>
+                <td>Employee Name</td>
+                <td><input type="text" placeholder="Employee Name" name="ename"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea name="eaddress" id="" cols="20" rows="5" placeholder="Enter Address"></textarea></td>
+            </tr>
+            <tr>
+                <td>Contact</td>
+                <td><input type="number" placeholder="Contact" name="econtact"></td>
+            </tr>
+            <tr>
+                <td>E-mail</td>
+                <td><input type="text" placeholder="Enter E-mail" name="email"></td>
+            </tr>
+            <tr>
+                <td>Message</td>
+                <td><textarea name="emsg" id="" cols="20" rows="5" placeholder="Enter Message"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align='center'><input type="submit" value="send"> </td>
+            </tr>
+            
+
+        </table>
+    </form>
+
+</body>
+
+</html>
